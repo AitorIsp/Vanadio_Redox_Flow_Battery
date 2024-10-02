@@ -22,7 +22,9 @@ classdef Rectangle < Shape
             obj.width = width;
             obj.heigth = heigth;           
             obj.setDiameter();
-            obj.setCrossSectionArea();
+            obj.setArea();
+            obj.setCrossSectionArea();  
+            obj.setVolume();
         end
 
         %% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Getters and setters %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% %%
@@ -38,6 +40,7 @@ classdef Rectangle < Shape
             obj.heigth = heigth;
             obj.setDiameter();
             obj.setCrossSectionArea();
+            obj.setVolume();
         end
 
         function width = getWidth(obj)
@@ -48,7 +51,9 @@ classdef Rectangle < Shape
         function setWidth(obj, width)
             obj.width = width;
             obj.setDiameter();
+            obj.setArea();
             obj.setCrossSectionArea();
+            obj.setVolume();
         end
 
         %% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Other %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% %%
@@ -60,6 +65,7 @@ classdef Rectangle < Shape
             obj.width = width;
             obj.heigth = heigth;
             obj.setDiameter();
+            obj.setArea();
             obj.setCrossSectionArea();
         end
 
@@ -78,11 +84,21 @@ classdef Rectangle < Shape
             obj.diameter = 2*obj.width*obj.heigth/(obj.width + obj.heigth); 
         end
 
+        function setArea(obj)
+            % obj.area = obj.length*obj.width;
+        end
+
         function setCrossSectionArea(obj)
             obj.crossArea = obj.heigth*obj.width;
         end
 
+        function setVolume(obj)
+            obj.volume = obj.heigth*obj.length*obj.width;
+        end
+
     end
+
+    % Ver problema ancho largo la gente de los articulos trolos 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
