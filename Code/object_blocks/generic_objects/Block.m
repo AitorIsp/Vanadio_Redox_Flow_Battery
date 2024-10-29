@@ -23,7 +23,7 @@ classdef (Abstract) Block < handle
                     obj.leftConns(1, varargin{1}) = BlockConnection();
                     obj.rightConns(1, varargin{2}) = BlockConnection();
                 else
-                    error("invalid parameter number")
+                    error("Invalid parameter number")
                 end
             end
         end

@@ -16,9 +16,8 @@ classdef StackBlock < Block
         % -------------------------------------------------------------------------------------------------------------%
         % -------------------------------------------------------------------------------------------------------------%
 
-        function obj = StackBlock(nCells)
+        function obj = StackBlock()
             obj = obj@Block(2, 2);
-            obj.cellBlocks
         end
         
     end
@@ -35,7 +34,7 @@ classdef StackBlock < Block
         function obj = buildSimpleStack(nCells, cellProto, manifoldProto, channelProto, bendProto, tJunctionProto1, tJunctionProto2)
             obj = StackBlock();
             for i=1:nCells
-
+             
             end
         end
 
@@ -44,6 +43,6 @@ classdef StackBlock < Block
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-
+% https://es.mathworks.com/help/matlab/matlab_prog/techniques-for-improving-performance.html
 end
 
