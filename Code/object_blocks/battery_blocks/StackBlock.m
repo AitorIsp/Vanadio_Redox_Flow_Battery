@@ -27,16 +27,26 @@ classdef StackBlock < Block
 
     methods (Static, Access=public)
         
+        %% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Generic factory %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% %%
+        % -------------------------------------------------------------------------------------------------------------%
+        % -------------------------------------------------------------------------------------------------------------%
+
+        function obj = buildStack(options)
+                        
+        end
+
         %% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Builders %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% %%
         % -------------------------------------------------------------------------------------------------------------%
         % -------------------------------------------------------------------------------------------------------------%
 
-        function obj = buildSimpleStack(nCells, cellProto, manifoldProto, channelProto, bendProto, tJunctionProto1, tJunctionProto2)
+        function obj = buildSimpleZStack(nCells, cellProto, manifoldProto, channelProto, bendProto, tJunctionProto1, tJunctionProto2)
             obj = StackBlock();
+            obj.cellBlocks(1, nCells) = CellBlock();
             for i=1:nCells
-             
+                obj.cellBlocks(i).setCell(cellProto.clone());
             end
         end
+
 
     end
 
@@ -44,5 +54,6 @@ classdef StackBlock < Block
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % https://es.mathworks.com/help/matlab/matlab_prog/techniques-for-improving-performance.html
+
 end
 
